@@ -3,7 +3,7 @@ require("dotenv").config();
 const mongoose = require("mongoose");
 const app = require("./app");
 
-// Memastikan konfigurasi tersedia
+
 const requiredEnv = [
     "PORT",
     "MONGODB_URI",
@@ -21,7 +21,7 @@ if (missingEnv.length > 0) {
     process.exit(1);
 }
 
-// Menjalankan server setelah MongoDB terhubung
+
 async function startServer() {
     try {
         await mongoose.connect(process.env.MONGODB_URI);

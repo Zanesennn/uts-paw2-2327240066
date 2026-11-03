@@ -13,7 +13,7 @@ const {
 
 const app = express();
 
-// Middleware CORS
+
 app.use(
     cors({
         origin: process.env.CORS_ORIGIN,
@@ -21,19 +21,19 @@ app.use(
     })
 );
 
-// Membaca request JSON
+
 app.use(express.json());
 
-// Routes Maskapai
+
 app.use("/api/maskapai", maskapaiRoutes);
 
-// Routes Penerbangan
+
 app.use("/api/penerbangan", penerbanganRoutes);
 
-// Route tidak ditemukan
+
 app.use(notFoundHandler);
 
-// Error handler harus didaftarkan paling akhir
+
 app.use(errorHandler);
 
 module.exports = app;

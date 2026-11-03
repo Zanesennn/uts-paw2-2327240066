@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-// Schema embedding untuk rute penerbangan
+
 const ruteSchema = new mongoose.Schema(
     {
         kotaAsal: {
@@ -20,7 +20,7 @@ const ruteSchema = new mongoose.Schema(
     }
 );
 
-// Schema utama penerbangan
+
 const penerbanganSchema = new mongoose.Schema(
     {
         kodePenerbangan: {
@@ -59,20 +59,20 @@ const penerbanganSchema = new mongoose.Schema(
             trim: true
         },
 
-        // Embedding
+        
         rute: {
             type: ruteSchema,
             required: [true, "Informasi rute wajib diisi"]
         },
 
-        // Referencing ke model Maskapai
+        
         maskapai: {
             type: mongoose.Schema.Types.ObjectId,
             ref: "Maskapai",
             required: [true, "Maskapai wajib dipilih"]
         },
 
-        // Waktu pembuatan data
+        
         createdAt: {
             type: Date,
             default: Date.now
