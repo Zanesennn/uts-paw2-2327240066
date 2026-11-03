@@ -38,8 +38,7 @@ const getAllPenerbangan = async (req, res, next) => {
     try {
         const filter = {};
 
-        // Filtering berdasarkan status
-        // Pencocokan dilakukan secara sama persis
+
         if (
             Object.prototype.hasOwnProperty.call(
                 req.query,
